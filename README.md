@@ -18,13 +18,13 @@ This is a collection of scripts exploring topic modelling on two corpora: State 
 4. Run `sotu_preproc.py`. It converts the SOTU corpus into the format Mallet understands: a text per line. Additionally, it works in different regimes of preprocessing (to specify them, uncomment some/all blocks of code in the `main()` function). The regimes are:
     
     1. Baseline: no substantial preprocessing, except converting for the format that Mallet takes in (one file with one document per line).
-    2. Bigrams: The texts are tokenized, lowercased; stopwords, punctuation and numbers are removed; bigrams are found and sorted by the likelihood ratio statistic (NLTK is used). Top 15 % percent of the bigrams are converted to tokens (the choice of 15 % is arbitrary).
+    2. Bigrams: The texts are tokenized, lowercased; stopwords, punctuation and numbers are removed; bigrams are found and sorted by the likelihood ratio statistic (NLTK is used).
     3. NER: the texts are fed to Spacy, which performs Named Entity Recognition; the entitites are converted to tokens.
     4. NER cleaned: same as above, but before being fed to Spacy, the texts are cleaned from stopwords, puncutation and numbers.
     5. NP: the texts are fed to Spacy, which parses them and discovers NPs, which are converted to tokens.
     6. NP cleaned: same as above, but before being fed to Spacy, the texts are cleaned from stopwords, puncutation and numbers.
     
-5. Run `sotu.R`. Again, make sure to set `dirs$mallet` (path to Mallet binary) and `dirs$data` (path to the data directory). All the results will be saved in `workdir_part2` folder. This will run the models on different variants of SOTU corpus (produced by `part2_preproc.py`). To specify, how many topics to model for each variant of the corpus, modify `n.topics` variable. To specify which variants of preprocessing to use modify `input.data` variable. For the output data on each variant of preprocessing, a subfolder will be created within `workdir_part2` folder. As before, plots with Log-likelihood and top words in each topic will be produced; they will be saved to 'sotu_results_Xtopics.RData', where X stands for number of topics chosen.
+5. Run `sotu.R`. Again, make sure to set `dirs$mallet` (path to Mallet binary) and `dirs$data` (path to the data directory). All the results will be saved in `workdir_part2` folder. This will run the models on different variants of SOTU corpus (produced by `part2_preproc.py`). To specify, how many topics to model for each variant of the corpus, modify `n.topics` variable. To specify which variants of preprocessing to use modify `input.data` variable. For the output data on each variant of preprocessing, a subfolder will be created within `workdir_part2` folder. As before, plots with Log-likelihood and top words in each topic will be produced; they will be saved to `sotu_results_Xtopics.RData`, where X stands for number of topics chosen.
  
 
 ## Scripts info
