@@ -31,8 +31,8 @@ This is a collection of scripts exploring topic modelling on two corpora: State 
 
 + 3 R scripts to control Mallet:
 
-	+ functions.R - contains functions for calling Mallet and collecting its output, as well as for producing plots of top 20 words in each topic
-		+ run.mallet function controls Mallet runs. One parameter of interest is "produce.output". If FALSE, Mallet will not create any data, and the script will just collect the LL/token values from Mallet console output. If TRUE, Mallet will produce 4 files, named like "X.number-of-topics", where X can be:
+	+ `functions.R` - contains functions for calling Mallet and collecting its output, as well as for producing plots of top 20 words in each topic
+		+ `run.mallet()` function controls Mallet runs. One parameter of interest is `produce.output`. If `FALSE`, Mallet will not create any data, and the script will just collect the LL/token values from Mallet console output. If `TRUE`, Mallet will produce 4 files, named like "X.number-of-topics", where X can be:
 			+ output-state
 			+ output-topic-keys
 			+ output-doc-topics
@@ -42,12 +42,12 @@ This is a collection of scripts exploring topic modelling on two corpora: State 
     
     The idea of calling Mallet from external scripts and collecting its output from the console is taken from [here](https://gist.github.com/benmarwick/4559589), but I have re-written and expanded the code. 
 		
-	+ Part1.R and Part2.R. The differences between them are minor:
+	+ `convote.R` and `sotu.R`. The differences between them are minor:
 		+ In the first section of the script it is possible to set parameters (data directory, output directory, path to Mallet binary; Mallet simulation parameters)
-		+ The following section of the script runs each model N times (controlled by n.chains parameter), collects the LL/token information and produces a summary plot.
-		+ The next section is devoted to running the models which do save output, parsing the diagnostics files to get word information for each topic and produce plots with the words scaled by their frequency in a topic. In Part1.R script only one model is trained in this section; in Part2.R script, several models are trained in a loop.
+		+ The following section of the script runs each model N times (controlled by `n.chains` parameter), collects the LL/token information and produces a summary plot.
+		+ The next section is devoted to running the models which do save output, parsing the diagnostics files to get word information for each topic and produce plots with the words scaled by their frequency in a topic. In `convote.R` script only one model is trained in this section; in `sotu.R` script, several models are trained in a loop.
 		
-+ part2_preproc.py script - creates preprocessed versions of SOTU corpus to be fed into Mallet. To use different regimes of preprocessing, uncomment the corresponding block in the main() function.
++ `sotu_preproc.py` script - creates preprocessed versions of SOTU corpus to be fed into Mallet. To use different regimes of preprocessing, uncomment the corresponding block in the `main()` function.
 
 3. The following parameters were specified when importing the data into Mallet:
 
