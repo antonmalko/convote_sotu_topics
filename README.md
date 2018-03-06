@@ -2,7 +2,7 @@
 
 ## Topic modeling of Convote and SOTU corpora.
 
-This is a collection of scripts exploring topic modelling on two corpora: State of the Union (SOTU) addresses and a corpus of [Congressional speech data](https://www.cs.cornell.edu/home/llee/data/convote.html). Topic modelling is done using [Mallet](http://mallet.cs.umass.edu/), with support scripts in R and Python. A (somewhat impressoinistic) description of the experiments can be found in `Report.pdf`.
+This is a collection of scripts exploring topic modelling on two corpora: State of the Union (SOTU) addresses and a corpus of [Congressional speech data](https://www.cs.cornell.edu/home/llee/data/convote.html). Topic modelling is done using [Mallet](http://mallet.cs.umass.edu/), with support scripts in R and Python. A (somewhat impressoinistic) description of the experiments can be found in `Discussion.pdf`.
 
 ## Running the scripts from scratch
 
